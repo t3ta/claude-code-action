@@ -1,6 +1,7 @@
 import { Octokit } from "@octokit/rest";
 import { graphql } from "@octokit/graphql";
 import { GITHUB_API_URL } from "./config";
+import { tokenManager } from "../token-manager";
 
 export type Octokits = {
   rest: Octokit;
@@ -17,4 +18,8 @@ export function createOctokit(token: string): Octokits {
       },
     }),
   };
+}
+
+export async function createManagedOctokit(): Promise<Octokits> {
+  return tokenManager.createOctokit();
 }

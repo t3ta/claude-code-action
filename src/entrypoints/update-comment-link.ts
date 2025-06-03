@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 
-import { createOctokit } from "../github/api/client";
+import { createManagedOctokit } from "../github/api/client";
 import * as fs from "fs/promises";
 import {
   updateCommentBody,
@@ -23,7 +23,7 @@ async function run() {
 
     const context = parseGitHubContext();
     const { owner, repo } = context.repository;
-    const octokit = createOctokit(githubToken);
+    const octokit = await createManagedOctokit();
 
     const serverUrl = GITHUB_SERVER_URL;
     const jobUrl = `${serverUrl}/${owner}/${repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;

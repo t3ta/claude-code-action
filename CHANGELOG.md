@@ -38,4 +38,4 @@ This is a fork of the official Claude Code Action that adds OAuth authentication
 
 ### Compatibility
 
-This fork maintains full backward compatibility with the original action. All existing workflows will continue to work without changes. OAuth is an optional authentication method alongside the existing options (API key, Bedrock, Vertex AI). 
+This fork maintains full backward compatibility with the original action. All existing workflows will continue to work without changes. OAuth is an optional authentication method alongside the existing options (API key, Bedrock, Vertex AI).
