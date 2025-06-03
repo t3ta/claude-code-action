@@ -15,7 +15,7 @@ import { setupBranch } from "../github/operations/branch";
 import { updateTrackingComment } from "../github/operations/comments/update-with-branch";
 import { prepareMcpConfig } from "../mcp/install-mcp-server";
 import { createPrompt } from "../create-prompt";
-import { createManagedOctokit } from "../github/api/client";
+import { createOctokit } from "../github/api/client";
 import { fetchGitHubData } from "../github/data/fetcher";
 import { parseGitHubContext } from "../github/context";
 
@@ -23,7 +23,7 @@ async function run() {
   try {
     // Step 1: Setup GitHub token
     const githubToken = await setupGitHubToken();
-    const octokit = await createManagedOctokit();
+    const octokit = createOctokit(githubToken);
 
     // Step 2: Parse GitHub context (once for all operations)
     const context = parseGitHubContext();
