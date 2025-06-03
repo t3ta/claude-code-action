@@ -1,6 +1,6 @@
 # Changelog
 
-## Fork Changes (Akira-Papa/claude-code-action@beta)
+## Fork Changes (t3ta/claude-code-action)
 
 This is a fork of the official Claude Code Action that adds OAuth authentication support for Claude Max subscribers.
 
@@ -11,7 +11,7 @@ This is a fork of the official Claude Code Action that adds OAuth authentication
   - New input: `claude_access_token` - OAuth access token from Claude Max subscription
   - New input: `claude_refresh_token` - OAuth refresh token from Claude Max subscription
   - New input: `claude_expires_at` - Token expiration timestamp
-- **Updated Base Action**: Uses `Akira-Papa/claude-code-base-action@beta` which includes OAuth credential handling
+- **Updated Base Action**: Uses `t3ta/claude-code-base-action@main` which includes OAuth credential handling
 
 ### Changed
 
@@ -28,7 +28,7 @@ This is a fork of the official Claude Code Action that adds OAuth authentication
    - `CLAUDE_EXPIRES_AT`
 3. Enable OAuth in your workflow:
    ```yaml
-   - uses: Akira-Papa/claude-code-action@beta
+   - uses: t3ta/claude-code-action@main
      with:
        use_oauth: "true"
        claude_access_token: ${{ secrets.CLAUDE_ACCESS_TOKEN }}
@@ -38,4 +38,4 @@ This is a fork of the official Claude Code Action that adds OAuth authentication
 
 ### Compatibility
 
-This fork maintains full backward compatibility with the original action. All existing workflows will continue to work without changes. OAuth is an optional authentication method alongside the existing options (API key, Bedrock, Vertex AI). 
+This fork maintains full backward compatibility with the original action. All existing workflows will continue to work without changes. OAuth is an optional authentication method alongside the existing options (API key, Bedrock, Vertex AI).
